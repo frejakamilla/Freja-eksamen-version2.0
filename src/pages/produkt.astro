@@ -163,7 +163,10 @@ const data = await response.json();
     margin-top: 25px;
   }
 
-  #type p {
+  .filtrering {
+    cursor: pointer;
+  }
+  .filtrering-tekst {
     font-size: 15px;
     text-align: center;
     font-weight: 400;
@@ -177,8 +180,11 @@ const data = await response.json();
     border: 1px solid var(--purelyWhite);
   }
   .filtrering:hover .filtrering-tekst {
-    font-weight: 600;
-    color: red;
+    font-weight: 300;
+  }
+
+  .active .filtrering-img {
+    border: 3px solid var(--purelyBlue);
   }
 
   /* cards */

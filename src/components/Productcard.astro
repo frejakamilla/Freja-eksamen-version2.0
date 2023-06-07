@@ -7,6 +7,7 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
   <a href={link} class="img-wrapper">
     <img src={img1} alt="" title="produkt-img" class="product-img" />
     <img src={img2} alt="" class="hover-img" />
+    <div class="overlay"><p class="p-product">Læs mere om produktet</p></div>
     <div id="tekst">
       <h4 title="navn" class="h4-product">{produktnavn}</h4>
       <p title="pris" class="p-product">{pris}</p>
@@ -38,6 +39,22 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
     border-radius: 5px 5px 0 0;
     border: 1px solid var(--purelyWhiteSeeThrough);
     grid-area: 1/1/2/2;
+  }
+  .overlay {
+    width: 100%;
+    height: 230px;
+    align-items: flex-end;
+    grid-area: 1/1/2/2;
+  }
+
+  .overlay .p-product {
+    margin: 0 1px;
+    padding: 5px;
+    width: 100%;
+    background-color: rgba(172, 192, 189, 0.8);
+    text-align: end;
+    color: var(--purelyWhite);
+    font-weight: 300;
   }
 
   #tekst {
@@ -73,7 +90,8 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
   }
 
   /* Hover billede skifter */
-  .hover-img {
+  .hover-img,
+  .overlay {
     display: none;
   }
   .img-wrapper:hover .product-img {
@@ -82,6 +100,9 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
 
   .img-wrapper:hover .hover-img {
     display: block;
+  }
+  .img-wrapper:hover .overlay {
+    display: flex;
   }
 
   /* Media queries */
@@ -102,7 +123,8 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
     }
   }
   @media (min-width: 1200px) {
-    img {
+    img,
+    .overlay {
       height: 280px;
     }
     #product-card {

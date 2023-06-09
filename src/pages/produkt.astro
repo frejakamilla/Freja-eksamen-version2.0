@@ -39,31 +39,31 @@ const data = await response.json();
         <section id="type">
           <h2 class="h2-produkt">Vælg din hårtype</h2>
           <div id="flex">
-            <div class="filtrering">
+            <div class="filtrering" id="krollet-fint">
               <img src="../images/Emilie_123437-e1662119971912.webp" alt="" class="filtrering-img" />
               <p class="filtrering-tekst">Krøller i fint hår</p>
               <br />
             </div>
-            <div class="filtrering">
+            <div class="filtrering" id="fint">
               <img src="../images/210319_PurelyProfessional-2101847-e1662119504658.webp" alt="" class="filtrering-img" />
               <p class="filtrering-tekst">Fint hår</p>
               <br />
             </div>
-            <div class="filtrering">
+            <div class="filtrering" id="kraftigt">
               <img src="../images/Texturepaste_123320-e1662120018541.webp" alt="" class="filtrering-img" />
               <p class="filtrering-tekst">Kraftigt hår</p>
               <br />
             </div>
-            <div class="filtrering">
+            <div class="filtrering" id="krolle-kraftigt">
               <img src="../images/kraftigt-haar.webp" alt="" class="filtrering-img" />
               <p class="filtrering-tekst">Krøller i kraftigt hår</p>
               <br />
             </div>
-            <div class="filtrering">
+            <div class="filtrering" id="problemer">
               <img src="../images/210319_PurelyProfessional101374-e1662120101448.webp" alt="" class="filtrering-img" />
               <p class="filtrering-tekst">Hovedbunds-<br />problemer & skæl</p>
             </div>
-            <div class="filtrering">
+            <div class="filtrering" id="farvet">
               <img src="../images/Signe_123789-e1662120053667.webp" alt="" class="filtrering-img" />
               <p class="filtrering-tekst">Farvet & kemisk behandlet hår</p>
             </div>
@@ -109,6 +109,10 @@ const data = await response.json();
 
   .hidden {
     display: none;
+  }
+
+  .shown {
+    display: block;
   }
 
   #loader {
@@ -185,6 +189,16 @@ const data = await response.json();
 
   .active .filtrering-img {
     border: 3px solid var(--purelyBlue);
+    transform: scale(105%);
+  }
+
+  .active:hover .filtrering-img {
+    border: 3px solid var(--purelyBlue);
+  }
+
+  .no-active .filtrering-img {
+    transform: scale(90%);
+    opacity: 80%;
   }
 
   /* cards */
@@ -254,10 +268,43 @@ const data = await response.json();
 </style>
 
 <script>
-  console.log("hej");
+  // loading aninmation –––––––––––––
   window.addEventListener("load", function () {
     // Skjul loader og vis innholdet på siden
     document.getElementById("loader").style.display = "none";
     document.getElementById("content").classList.remove("hidden");
+  });
+
+  // filtrering efter hårtyper ––––––––––––––
+  const krolletFintHaar = document.getElementById("krollet-fint");
+  const fintHaar = document.getElementById("fint");
+  const kraftigtHaar = document.getElementById("kraftigt");
+  const krolletKraftigtHaar = document.getElementById("krolle-kraftigt");
+  const problemHaar = document.getElementById("problemer");
+  const farvetHaar = document.getElementById("farvet");
+
+  const elementer = [krolletFintHaar, fintHaar, kraftigtHaar, krolletKraftigtHaar, problemHaar, farvetHaar];
+
+  elementer.forEach((element) => {
+    element.addEventListener("click", () => {
+      if (element.classList.contains("active")) {
+        elementer.forEach((e) => {
+          e.classList.remove("active");
+          e.classList.remove("no-active");
+        });
+      } else {
+        elementer.forEach((e) => {
+          e.classList.remove("active");
+          e.classList.add("no-active");
+        });
+
+        if (element.classList.contains("active")) {
+          element.classList.remove("active");
+        } else {
+          element.classList.remove("no-active");
+          element.classList.add("active");
+        }
+      }
+    });
   });
 </script>

@@ -1,9 +1,9 @@
 ---
 import "../styles/style.css";
-const { img1, img2, produktnavn, pris, link } = Astro.props;
+const { img1, img2, produktnavn, pris, link, haartype } = Astro.props;
 ---
 
-<section id="product-card">
+<section class={"product-card " + haartype}>
   <a href={link} class="img-wrapper">
     <img src={img1} alt="" title="produkt-img" class="product-img" />
     <img src={img2} alt="" class="hover-img" />
@@ -19,7 +19,7 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
 <style>
   /* mobileview */
 
-  #product-card {
+  .product-card {
     background-color: var(--purelyWhiteSeeThrough);
     width: 170px;
     height: 330px;
@@ -112,13 +112,13 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
 
   /* desktop format (over 900px)*/
   @media (min-width: 800px) {
-    #product-card {
+    .product-card {
       width: 190px;
     }
   }
 
   @media (min-width: 900px) {
-    #product-card {
+    .product-card {
       width: 220px;
     }
   }
@@ -127,7 +127,7 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
     .overlay {
       height: 280px;
     }
-    #product-card {
+    .product-card {
       width: 280px;
       height: 400px;
     }
@@ -146,5 +146,9 @@ const { img1, img2, produktnavn, pris, link } = Astro.props;
       font-size: 20px;
       margin: 0 10px 10px;
     }
+  }
+
+  .hidden {
+    display: none;
   }
 </style>

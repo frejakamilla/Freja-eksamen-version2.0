@@ -87,15 +87,10 @@ const data = await response.json();
                   pris={produkt.pris}
                   indhold={produkt.indhold}
                   størrelse={produkt.produkt_size}
+                  haartype={produkt.haartype}
                 />
               ))
             }
-            <!-- <Productcard />
-        <Productcard />
-        <Productcard />
-        <Productcard />
-        <Productcard />
-        <Productcard /> -->
           </section>
         </div>
       </main>
@@ -106,10 +101,6 @@ const data = await response.json();
 
 <style>
   /* Mobile first */
-
-  .hidden {
-    display: none;
-  }
 
   .shown {
     display: block;
@@ -265,6 +256,10 @@ const data = await response.json();
       align-items: center;
     }
   }
+
+  .hidden {
+    display: none;
+  }
 </style>
 
 <script>
@@ -305,6 +300,71 @@ const data = await response.json();
           element.classList.add("active");
         }
       }
+
+      document.querySelectorAll(".product-card").forEach((card) => {
+        // fint krøllet
+        if (krolletFintHaar.classList.contains("active")) {
+          if (card.classList.contains("krollet")) {
+            card.classList.remove("hidden");
+          } else if (card.classList.contains("alle")) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+        // fint
+        else if (fintHaar.classList.contains("active")) {
+          if (card.classList.contains("fint")) {
+            card.classList.remove("hidden");
+          } else if (card.classList.contains("alle")) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+        // kraftigt
+        else if (kraftigtHaar.classList.contains("active")) {
+          if (card.classList.contains("kraftigt")) {
+            card.classList.remove("hidden");
+          } else if (card.classList.contains("alle")) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+        //krøllet kraftigt
+        else if (krolletKraftigtHaar.classList.contains("active")) {
+          if (card.classList.contains("krollet")) {
+            card.classList.remove("hidden");
+          } else if (card.classList.contains("alle")) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+        // skæl og hovedbundsproblemer
+        else if (problemHaar.classList.contains("active")) {
+          if (card.classList.contains("skael")) {
+            card.classList.remove("hidden");
+          } else if (card.classList.contains("alle")) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        }
+        // farvet hår
+        else if (farvetHaar.classList.contains("active")) {
+          if (card.classList.contains("farvet")) {
+            card.classList.remove("hidden");
+          } else if (card.classList.contains("alle")) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        } else {
+          card.classList.remove("hidden");
+        }
+      });
     });
   });
 </script>

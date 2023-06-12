@@ -110,4 +110,29 @@ import "../styles/style.css";
       width: 340px;
     }
   }
+
+  /* Hovereffekter */
+  .raad-card:hover {
+    background-color: #6f94b0;
+  }
+  .raad-card:hover .pil {
+    animation: animate 1s infinite ease-in-out;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateX(-0.5%);
+    }
+
+    33% {
+      transform: translateX(0.5%);
+    }
+    66% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-0.5%);
+    }
+  }
 </style>

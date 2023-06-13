@@ -2,18 +2,16 @@
 import Bestsellercard from "./Bestsellercard.astro";
 ---
 
-<section id="bestseller">
-  <a href="#">
-    <h2>Se også her</h2>
-    <div class="carousel">
-      <Bestsellercard />
-    </div>
-  </a>
+<section id="seher">
+  <h2>Se også her</h2>
+  <div class="carousel">
+    <Bestsellercard />
+  </div>
 </section>
 
 <style>
   /* mobileview */
-  #bestseller {
+  #seher {
     background-color: var(--lightOcean);
     height: fit-content;
     margin-top: 30px;
@@ -37,7 +35,7 @@ import Bestsellercard from "./Bestsellercard.astro";
       max-width: 1500px;
       justify-content: space-around;
     }
-    #bestseller {
+    #seher {
       padding-left: calc((100vw - 1500px) / 2);
       padding-right: calc((100vw - 1500px) / 2);
     }

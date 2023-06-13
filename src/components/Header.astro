@@ -5,9 +5,10 @@ import "../styles/style.css";
 <header id="header">
   <nav id="nav">
     <div id="logo">
-      <a href="/"
-        ><img src="../../svgfiles/purely-logo-white.svg" alt="logo" /></a
-      >
+      <a href="/">
+        <img src="../../svgfiles/purely-logo-white.svg" alt="logo" class="logo-white" />
+        <img src="../../svgfiles/purely-logo-blue.svg" alt="" class="logo-blue" />
+      </a>
     </div>
     <div class="burger-menu">
       <div class="burger"></div>
@@ -33,9 +34,7 @@ import "../styles/style.css";
       </ul>
 
       <li>
-        <a href="../../purelypromise" class="underline-effect"
-          >The Purely Promise</a
-        >
+        <a href="../../purelypromise" class="underline-effect">The Purely Promise</a>
       </li>
       <li>
         <a href="../../refilleries" class="underline-effect">Refilleries</a>
@@ -45,20 +44,9 @@ import "../styles/style.css";
         <a href="../../vidensbank" class="underline-effect">Vidensbank</a>
       </li>
       <div id="socials">
-        <a href="https://www.instagram.com/purelyprofessional/" target="_blank"
-          ><img
-            src="../../svgfiles/instagram-logo.svg"
-            alt="Instagram logo"
-          /></a
-        >
-        <a
-          href="https://www.facebook.com/PurelyProfessionalDK/?locale=da_DK"
-          target="_blank"
-          ><img src="../../svgfiles/facebook-logo.svg" alt="Facebook logo" /></a
-        >
-        <a href="mailto:kundeservice@purelyprofessional.dk" target="_blank"
-          ><img src="../../svgfiles/mail-logo.svg" alt="Mail logo" /></a
-        >
+        <a href="https://www.instagram.com/purelyprofessional/" target="_blank"><img src="../../svgfiles/instagram-logo.svg" alt="Instagram logo" /></a>
+        <a href="https://www.facebook.com/PurelyProfessionalDK/?locale=da_DK" target="_blank"><img src="../../svgfiles/facebook-logo.svg" alt="Facebook logo" /></a>
+        <a href="mailto:kundeservice@purelyprofessional.dk" target="_blank"><img src="../../svgfiles/mail-logo.svg" alt="Mail logo" /></a>
       </div>
     </div>
     <div id="icons">
@@ -98,6 +86,16 @@ import "../styles/style.css";
   #logo img {
     height: 48px;
     vertical-align: middle;
+  }
+
+  .logo-blue {
+    display: none;
+  }
+  #logo:hover .logo-blue {
+    display: block;
+  }
+  #logo:hover .logo-white {
+    display: none;
   }
 
   .burger-menu {

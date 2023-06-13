@@ -151,4 +151,20 @@
       grid-area: 2/4/3/5;
     }
   }
+
+  .link:hover .pil {
+    animation: slide linear infinite 1s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+    20% {
+      transform: translateY(0px);
+    }
+  }
 </style>

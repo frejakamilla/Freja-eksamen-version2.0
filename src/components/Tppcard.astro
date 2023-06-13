@@ -17,7 +17,7 @@ const { id, illustration, title1, title2, title3, title4, text, p1, p2, p3, p4, 
     <div class="link" id="link-knap">
       <div class="link-tekst">
         <p id="read-more">Læs mere</p><p id="luk" class="hide">luk</p>
-        <img src="../svgfiles/pil.svg" alt="" class="pil" id="blaa-pil" />
+        <img src="../svgfiles/pil.svg" alt="" class="pil jump" id="blaa-pil" />
       </div>
       <hr class="underline" />
     </div>
@@ -298,6 +298,22 @@ const { id, illustration, title1, title2, title3, title4, text, p1, p2, p3, p4, 
       margin-left: calc(100% - 15px - 56px);
     }
   }
+
+  #tpp-card:hover .jump {
+    animation: jump linear infinite 1s;
+  }
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+    20% {
+      transform: translateY(0px);
+    }
+  }
 </style>
 
 <script>
@@ -308,6 +324,7 @@ const { id, illustration, title1, title2, title3, title4, text, p1, p2, p3, p4, 
       card.querySelector("#luk").classList.toggle("hide");
       card.querySelector("#blaa-pil").classList.toggle("rotate");
       card.querySelector("#read-more").classList.toggle("hide");
+      card.querySelector("#blaa-pil").classList.toggle("jump");
     });
     card.querySelector("#link-knap-luk").addEventListener("click", () => {
       card.querySelector("#open-menu").classList.toggle("hide");

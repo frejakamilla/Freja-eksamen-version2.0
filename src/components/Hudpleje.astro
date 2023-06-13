@@ -4,8 +4,8 @@
 <section id="hudpleje">
   <h2>Lær om hudpleje</h2>
   <div class="bredformat">
-    <div id="ansigtspleje">
-      <img src="../images/210318_PurelyProfessional-2100251.webp" alt="" id="ansigtspleje-img" />
+    <div id="ansigtspleje" class="hudpleje">
+      <img src="../images/210318_PurelyProfessional-2100251.webp" alt="" id="ansigtspleje-img" class="img" />
       <div class="link-container">
         <div class="link">
           <div class="link-tekst">
@@ -16,8 +16,8 @@
         </div>
       </div>
     </div>
-    <div id="kropspleje">
-      <img src="../images/210318_PurelyProfessional_3_100865.webp" alt="" id="kropspleje-img" />
+    <div id="kropspleje" class="hudpleje">
+      <img src="../images/210318_PurelyProfessional_3_100865.webp" alt="" id="kropspleje-img" class="img" />
       <div class="link-container">
         <div class="link">
           <div class="link-tekst">
@@ -115,10 +115,13 @@
     }
   }
 
-  .link:hover .pil {
+  .hudpleje:hover .pil {
     animation: slide linear infinite 1s;
   }
 
+  .hudpleje:hover .img {
+    padding: 3px;
+  }
   @keyframes slide {
     0% {
       transform: translateY(0px);

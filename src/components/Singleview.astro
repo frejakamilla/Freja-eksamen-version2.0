@@ -47,9 +47,9 @@ const { img1, img2, img3, produktnavn, beskrivelse, pris, størrelse, indhold, b
       <div id="beskrivelse">
         <h4>Størrelse</h4>
         <div id="size">
-          <button>60 ml</button>
-          <button>300 ml</button>
-          <button>1000 ml</button>
+          <button class="60ml">60 ml</button>
+          <button class="300ml active">300 ml</button>
+          <button class="1000ml">1000 ml</button>
         </div>
         <div>
           <h4>Beskrivelse</h4>
@@ -201,6 +201,15 @@ const { img1, img2, img3, produktnavn, beskrivelse, pris, størrelse, indhold, b
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  #size button:hover {
+    outline: 2px solid var(--purelyBlue);
+    outline-offset: -1px;
+    background-color: var(--purelyWhite);
+  }
+  #size .active {
+    background-color: var(--lightOcean);
   }
   /* tablet format (over 600px)*/
   @media (min-width: 600px) {

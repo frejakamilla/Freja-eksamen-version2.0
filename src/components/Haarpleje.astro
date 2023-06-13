@@ -8,53 +8,45 @@
       <div class="haertype_billede">
         <img src="../images/kraftigt-haar.webp" alt="" />
       </div>
-      <div class="haertype_tekst">
-        <h4>Kraftigt krøllet hår</h4>
-      </div>
+      <h4 class="haertype_tekst">Kraftigt krøllet hår</h4>
     </div>
+
     <div class="haertype_div">
       <div class="haertype_billede">
         <img src="../images/210319_PurelyProfessional-2101847-e1662119504658.webp" alt="" />
       </div>
-      <div class="haertype_tekst">
-        <h4>Fint hår</h4>
-      </div>
+      <h4 class="haertype_tekst">Fint hår</h4>
     </div>
+
     <div class="haertype_div">
       <div class="haertype_billede">
         <img src="../images/Emilie_123437-e1662119971912.webp" alt="" />
       </div>
-      <div class="haertype_tekst">
-        <h4>Krøller i fint hår</h4>
-      </div>
+      <h4 class="haertype_tekst">Krøller i fint hår</h4>
     </div>
 
     <div class="haertype_div">
       <div class="haertype_billede">
         <img src="../images/Texturepaste_123320-e1662120018541.webp" alt="" />
       </div>
-      <div class="haertype_tekst">
-        <h4>Kraftigt hår</h4>
-      </div>
+      <h4 class="haertype_tekst">Kraftigt hår</h4>
     </div>
 
     <div class="haertype_div">
       <div class="haertype_billede">
         <img src="../images/Signe_123789-e1662120053667.webp" alt="" />
       </div>
-      <div class="haertype_tekst">
-        <h4>Farvet og kemisk<br />behandlet hår</h4>
-      </div>
+      <h4 class="haertype_tekst">Farvet og kemisk<br />behandlet hår</h4>
     </div>
+
     <div class="haertype_div" id="haertype_div6">
       <div class="haertype_billede">
         <img src="../images/210319_PurelyProfessional101374-e1662120101448.webp" alt="" />
       </div>
-      <div class="haertype_tekst">
-        <h4>Irriteret hovedbund<br />og skæl</h4>
-      </div>
+      <h4 class="haertype_tekst">Irriteret hovedbund<br />og skæl</h4>
     </div>
   </div>
+
   <div class="link-container">
     <div class="link">
       <div class="link-tekst">
@@ -92,7 +84,7 @@
     height: 320px;
   }
 
-  h4 {
+  .haertype_tekst {
     margin-left: 5px;
   }
   /* -- link med pil -- */
@@ -166,5 +158,13 @@
     20% {
       transform: translateY(0px);
     }
+  }
+
+  .haertype_div:hover img {
+    padding: 3px;
+  }
+
+  .haertype_div:hover .haertype_tekst {
+    color: var(--purelyBlue);
   }
 </style>

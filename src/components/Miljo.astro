@@ -11,18 +11,17 @@
         <img src="../svgfiles/plastik.svg" alt="" />
       </div>
       <div class="miljo_tekst">
-        <h3>PLASTIK</h3>
+        <h3 class="miljo-title">PLASTIK</h3>
       </div>
     </div>
     <div class="miljo_div">
       <div class="miljo_billede">
         <img src="../images/bio-baggrund.webp" alt="" />
         <div></div>
-
         <img src="../svgfiles/biodiversitet.svg" alt="" />
       </div>
       <div class="miljo_tekst">
-        <h3>BIODIVERSITET</h3>
+        <h3 class="miljo-title">BIODIVERSITET</h3>
       </div>
     </div>
     <div class="miljo_div" id="miljo_div3">
@@ -32,7 +31,7 @@
         <img src="../svgfiles/klima.svg" alt="" />
       </div>
       <div class="miljo_tekst">
-        <h3>Klima</h3>
+        <h3 class="miljo-title">Klima</h3>
       </div>
     </div>
     <div class="miljo_div" id="miljo_div1">
@@ -42,7 +41,7 @@
         <img src="../svgfiles/miljofarlige-stoffer.svg" alt="" />
       </div>
       <div class="miljo_tekst">
-        <h3>Miljøfarlige stoffer</h3>
+        <h3 class="miljo-title">Miljøfarlige stoffer</h3>
       </div>
     </div><div class="miljo_div" id="miljo_div1">
       <div class="miljo_billede">
@@ -52,7 +51,7 @@
         <img src="../svgfiles/affaldssortering.svg" alt="" />
       </div>
       <div class="miljo_tekst">
-        <h3>Affalds-sortering</h3>
+        <h3 class="miljo-title">Affalds-sortering</h3>
       </div>
     </div>
   </div>
@@ -74,9 +73,10 @@
     height: fit-content;
   }
 
-  h3 {
+  .miljo-title {
     text-transform: uppercase;
     text-align: center;
+    letter-spacing: 2px;
   }
   .miljo_billede {
     display: grid;
@@ -95,17 +95,20 @@
   }
 
   .miljo_div {
-    /* display: inline-block; */
-    /* position: relative; */
     display: flex;
     flex-direction: column;
     align-items: center;
     height: fit-content;
     padding-top: 10px;
   }
+  .miljo_div:hover .miljo_billede div {
+    background-color: var(--mediumOcean);
+  }
 
-  /* rgba(164, 149, 126, 0.5)
- */
+  .miljo_div:hover .miljo-title {
+    font-weight: 600;
+  }
+
   @media (min-width: 900px) {
     #finhaertype {
       background-color: var(--mediumOcean);

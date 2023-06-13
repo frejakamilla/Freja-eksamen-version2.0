@@ -3,22 +3,23 @@ import "../styles/style.css";
 const { img1, img2, produktnavn, pris, link, haartype } = Astro.props;
 ---
 
-<section class={"product-card " + haartype}>
-  <a href={link} class="img-wrapper">
-    <img src={img1} alt="" title="produkt-img" class="product-img" />
-    <img src={img2} alt="" class="hover-img" />
-    <div class="overlay"><p class="p-product">Læs mere om produktet</p></div>
-    <div id="tekst">
-      <h4 title="navn" class="h4-product">{produktnavn}</h4>
-      <p title="pris" class="p-product">{pris}</p>
-    </div>
-  </a>
-  <button id="knap">Føj til kurv</button>
-</section>
+<div class={"product-card-container " + haartype}>
+  <section class="product-card">
+    <a href={link} class="img-wrapper">
+      <img src={img1} alt="" title="produkt-img" class="product-img" />
+      <img src={img2} alt="" class="hover-img" />
+      <div class="overlay"><p class="p-product">Læs mere om produktet</p></div>
+      <div id="tekst">
+        <h4 title="navn" class="h4-product">{produktnavn}</h4>
+        <p title="pris" class="p-product">{pris}</p>
+      </div>
+    </a>
+    <button id="knap" class="knap">Føj til kurv</button>
+  </section>
+</div>
 
 <style>
   /* mobileview */
-
   .product-card {
     background-color: var(--purelyWhiteSeeThrough);
     width: 170px;
@@ -75,7 +76,7 @@ const { img1, img2, produktnavn, pris, link, haartype } = Astro.props;
     line-height: 16px;
   }
 
-  #knap {
+  .knap {
     background-color: var(--darkSand);
     border: none;
     color: var(--purelyWhite);
@@ -87,6 +88,9 @@ const { img1, img2, produktnavn, pris, link, haartype } = Astro.props;
     margin-right: 5px;
     margin-bottom: 5px;
     cursor: pointer;
+  }
+  .knap:hover {
+    background-color: var(--mediumOcean);
   }
 
   /* Hover billede skifter */
@@ -147,8 +151,26 @@ const { img1, img2, produktnavn, pris, link, haartype } = Astro.props;
       margin: 0 10px 10px;
     }
   }
-
+  .active {
+    background-color: var(--mediumSand);
+  }
   .hidden {
     display: none;
   }
 </style>
+
+<script>
+  document.querySelectorAll(".product-card-container").forEach((card) => {
+    console.log("CARD", card);
+    const addToBasket = card.querySelector("#knap");
+
+    addToBasket.addEventListener("click", () => {
+      addToBasket.classList.toggle("active");
+      if (addToBasket.classList.contains("active")) {
+        addToBasket.textContent = "Produkt i kurv";
+      } else {
+        addToBasket.textContent = "Føj til kurv";
+      }
+    });
+  });
+</script>
